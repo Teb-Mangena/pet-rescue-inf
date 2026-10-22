@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ---- Custom daisyUI theme ---- */
+@plugin "daisyui/theme" {
+  name: "petrescue";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #f5f1ea;
+  --color-base-200: #ede7dc;
+  --color-base-300: #e0d8c9;
+  --color-base-content: #1a1a1a;
+
+  --color-primary: #d4502a;
+  --color-primary-content: #f5f1ea;
+
+  --color-secondary: #e8a33d;
+  --color-secondary-content: #1a1a1a;
+
+  --color-accent: #4a5d3a;
+  --color-accent-content: #f5f1ea;
+
+  --color-neutral: #1a1a1a;
+  --color-neutral-content: #f5f1ea;
+
+  --color-info: #4a5d3a;
+  --color-success: #4a5d3a;
+  --color-warning: #e8a33d;
+  --color-error: #a63a1c;
+
+  --input-color: #f5f1ea;
+  --input-color-content: #1a1a1a;
+  --color-base-100: #f5f1ea;
+  --color-base-200: #ede7dc;
+  --color-base-300: #e0d8c9;
+  --color-base-content: #1a1a1a;
+
+  --radius-box: 1rem;
+  --radius-btn: 0.5rem;
+  --radius-badge: 2rem;
+
+  --animation-btn: 0.2s;
+  --btn-focus-scale: 0.97;
+}
+
+/* ---- Custom theme tokens (Tailwind v4 @theme) ---- */
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-ink: #1a1a1a;
+  --color-bone: #f5f1ea;
+  --color-burnt: #d4502a;
+  --color-burnt-deep: #a63a1c;
+  --color-amber: #e8a33d;
+  --color-moss: #4a5d3a;
+  --color-stone: #8a8178;
+
+  --animate-bob: bob 3s ease-in-out infinite;
+  --animate-wag: wag 0.5s ease-in-out infinite;
+  --animate-blink: blink 4s ease-in-out infinite;
+  --animate-pin-drop: pin-drop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes wag {
+    0%,
+    100% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+  }
+  @keyframes blink {
+    0%,
+    92%,
+    100% {
+      transform: scaleY(1);
+    }
+    95% {
+      transform: scaleY(0.1);
+    }
+  }
+  @keyframes pin-drop {
+    0% {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(4px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bone);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.02em;
+}
